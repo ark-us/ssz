@@ -1,6 +1,6 @@
 {
-  "name": "@chainsafe/as-sha256",
-  "version": "0.4.1",
+  "name": "@ark-us/as-sha256",
+  "version": "0.4.1-alpha.2",
   "description": "An AssemblyScript implementation of SHA256",
   "author": "ChainSafe Systems",
   "license": "Apache-2.0",
@@ -24,8 +24,11 @@
   },
   "types": "lib/index.d.ts",
   "files": [
+    "assembly",
     "lib",
-    "build"
+    "build",
+    "scripts",
+    "src"
   ],
   "scripts": {
     "generate": "rm -rf ./dist && node -r ts-node/register ./scripts/codegen.ts",
@@ -46,5 +49,8 @@
     "@chainsafe/babel-plugin-inline-binary-import": "^1.0.3",
     "assemblyscript": "^0.27.24",
     "benchmark": "^2.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -332,3 +332,17 @@ export function digest64(inPtr: usize, outPtr: usize): void {
   store32(outPtr, 6, bswap(H6));
   store32(outPtr, 7, bswap(H7));
 }
+
+export function digestWrap(value: ArrayBuffer): ArrayBuffer {
+  const v = Uint8Array.wrap(value);
+  Uint8Array.wrap(input).set(v, 0)
+  digest(v.length)
+  return output
+}
+
+export function digest64Wrap(value: ArrayBuffer): ArrayBuffer {
+  const v = Uint8Array.wrap(value);
+  Uint8Array.wrap(input).set(v, 0)
+  digest64(inputPtr, v.length)
+  return output
+}
